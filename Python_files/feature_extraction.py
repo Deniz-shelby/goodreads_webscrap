@@ -1,3 +1,9 @@
+import numpy as np
+import pandas as pd
+from bs4 import BeautifulSoup
+import re
+import requests
+
 #Function to get the title of the book
 def get_title(soup_detail):
     try:
