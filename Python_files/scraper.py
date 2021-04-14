@@ -9,8 +9,7 @@ import feature_extraction
 """Order of Execution will be,
 1. links_extraction
 2. feature_extraction
-3. pre-processing 
-4. plots
+3. scrap_data
 
 5. if anything left, we can include it in scraper """
 
