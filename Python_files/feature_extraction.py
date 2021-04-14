@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
-import re
 import requests
 
 #Function to get the title of the book
@@ -97,7 +96,7 @@ def get_review(soup_detail):
 # get series
 def get_series(soup_detail):
     try:
-        series = soup_test.find(id="bookSeries").text.strip()
+        series = soup_detail.find(id="bookSeries").text.strip()
         if len(series) == 0:
             return False
         else: 
@@ -109,7 +108,7 @@ def get_series(soup_detail):
 # get places
 def get_places(soup_detail):
     try:
-        places = soup_test.find("div", {'id':"bookDataBox"}).find('span',class_="darkGreyText").text.replace("(","").replace(")","").strip()
+        places = soup_detail.find("div", {'id':"bookDataBox"}).find('span',class_="darkGreyText").text.replace("(","").replace(")","").strip()
     except:
         places = np.nan
     return places
