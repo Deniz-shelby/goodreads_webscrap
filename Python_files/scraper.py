@@ -3,9 +3,14 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import re
 import requests
+import links_extraction
+import feature_extraction
 
+"""Order of Execution will be,
+1. links_extraction
+2. feature_extraction
+3. pre-processing 
+4. plots
 
-url = requests.get("https://www.goodreads.com/list/show/6.Best_Books_of_the_20th_Century?page=1")
-soup = BeautifulSoup(url.content, 'html.parser')
+5. if anything left, we can include it in scraper """
 
-print(soup)
