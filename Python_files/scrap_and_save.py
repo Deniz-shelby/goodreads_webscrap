@@ -1,4 +1,8 @@
 import feature_extraction as fe
+import numpy as np
+import pandas as pd
+from bs4 import BeautifulSoup
+import requests
 
 def create_df_and_save_as_csv(url_list):
     title = []

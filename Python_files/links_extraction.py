@@ -22,11 +22,13 @@ def get_links_for_100(url_one_page):
             href_link_list.append("https://www.goodreads.com" + str(link.attrs['href']))
     return href_link_list
 
-def get_links_for_100(url_one_page):
-    url_page = requests.get(url_one_page)
-    soup = BeautifulSoup(url_page.content, 'html.parser')
-    href_link_list =[]
-    for link in soup.find_all('a', class_='bookTitle') :
-        if link.has_attr('href'):
-            href_link_list.append("https://www.goodreads.com" + str(link.attrs['href']))
-    return href_link_list
+
+def get_all_1000_links(url_list):
+    url_10_pages = get_list_pages_of_10(url_list)
+    all_links = []
+    for link in url_10_pages:
+        all_links.append(get_links_for_100(link))
+    flat_list_of_1000 = []
+    for elem in all_links:
+        flat_list_of_1000.extend(elem)
+    return flat_list_of_1000
