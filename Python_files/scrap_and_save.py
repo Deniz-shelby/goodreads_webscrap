@@ -1,3 +1,5 @@
+import feature_extraction as fe
+
 def create_df_and_save_as_csv(url_list):
     title = []
     author = []
@@ -16,17 +18,17 @@ def create_df_and_save_as_csv(url_list):
         soup_detail = BeautifulSoup(one_book.content, 'html.parser')
 
 
-        title.append(get_title(soup_detail))
-        author.append(get_author(soup_detail))
-        num_reviews.append(get_review(soup_detail))
-        num_ratings.append(get_rating(soup_detail))
-        avg_rating.append(get_avgrating(soup_detail))
-        num_pages.append(get_page(soup_detail))
-        original_publish_year.append(get_year(soup_detail))
-        series.append(get_series(soup_detail))
-        genres.append(get_genres(soup_detail))
-        awards.append(get_award(soup_detail))
-        places.append(get_places(soup_detail))
+        title.append(fe.get_title(soup_detail))
+        author.append(fe.get_author(soup_detail))
+        num_reviews.append(fe.get_review(soup_detail))
+        num_ratings.append(fe.get_rating(soup_detail))
+        avg_rating.append(fe.get_avgrating(soup_detail))
+        num_pages.append(fe.get_page(soup_detail))
+        original_publish_year.append(fe.get_year(soup_detail))
+        series.append(fe.get_series(soup_detail))
+        genres.append(fe.get_genres(soup_detail))
+        awards.append(fe.get_award(soup_detail))
+        places.append(fe.get_places(soup_detail))
         
     data = {'url' : url_list,
             'title':title,
