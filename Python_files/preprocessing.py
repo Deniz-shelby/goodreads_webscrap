@@ -17,10 +17,15 @@ def preprocessing(csv_path):
     # normalization
     # 1+(rating - min/ max - min)*9
     max_avgrating=max(df['avg_rating'])
-
     min_avgrating=min(df['avg_rating'])
+    mean_avgrating = df['avg_rating'].mean()
+
 
     df['mean_norm_ratings'] = round(1+((df['avg_rating']-min_avgrating)/(max_avgrating-min_avgrating))*9,2)
+    df['mean_norm_ratings'] = round((((df['avg_rating']-mean_avgrating)/(max_avgrating-min_avgrating))+1) * 4.5 + 1, 2)
+
+
     df.to_csv("df_cleaned.csv", index=False)
+    
 
     # preprocessing("df_new_1100.csv")
