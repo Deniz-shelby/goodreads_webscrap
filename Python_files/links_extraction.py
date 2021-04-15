@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
-import re
 import requests
 
 #Function to get the list of pages from 1-10 in goodreads website
