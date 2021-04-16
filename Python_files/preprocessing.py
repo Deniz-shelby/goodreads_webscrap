@@ -1,7 +1,7 @@
 import pandas as pd
 
-def preprocessing(csv_path):
-    df = pd.read_csv(csv_path)
+def preprocessing(df_input):
+    df = df_input
     # drop na if needed add more columns
     df = df.dropna(subset=['awards'])
     df =df.dropna(subset=['original_publish_year'])
