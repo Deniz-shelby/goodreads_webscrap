@@ -8,7 +8,9 @@ def preprocessing(df_input):
     #cleaning the data
     # cleaning data
     df['num_reviews'] = df['num_reviews'].str.replace(",","")
+    df['num_reviews'] = str(df['num_reviews'])
     df['num_ratings'] = df['num_ratings'].str.replace(",","")
+    df['num_ratings'] = str(df['num_ratings'])
     df['num_pages'] = df['num_pages'].astype(int)
     df['original_publish_year'] = df['original_publish_year'].astype(int)
     #awards count
