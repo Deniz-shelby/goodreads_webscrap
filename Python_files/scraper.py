@@ -1,4 +1,5 @@
 
+import timeit
 import links_extraction as le
 import scrap_and_save as s_s
 from preprocessing import preprocessing
@@ -11,8 +12,8 @@ from analyse import analyse
 
 5. if anything left, we can include it in scraper """
 def main():
-    list_of_1000_links = le.get_all_1000_links('https://www.goodreads.com/list/show/6.Best_Books_of_the_20th_Century?page=')
-    df =s_s.create_df_and_save_as_csv(list_of_1000_links)
+    list_of_1100_links = le.get_all_1000_links('https://www.goodreads.com/list/show/6.Best_Books_of_the_20th_Century?page=')
+    df_all =s_s.create_df_and_save_as_csv(list_of_1100_links)
 
 #### other version
     #df_all = s_s.create_df_and_save_as_csv(le.get_all_1000_links('https://www.goodreads.com/list/show/6.Best_Books_of_the_20th_Century?page='))
@@ -21,4 +22,4 @@ def main():
     analyse(df_cleaned,df_all)
 
 if __name__=='__main__':
-    main()
+    timeit(main())

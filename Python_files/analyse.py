@@ -12,7 +12,7 @@ import statsmodels as sm
 
 
 def analyse(df_input,df_all_input):
-    df = pd.read_csv("df_input")
+    df = df_input
     fig, ax = plt.subplots(figsize=(17,8))
     plt.scatter(df['num_pages'],df['num_ratings'],
             label = 'books',
@@ -411,7 +411,7 @@ def analyse(df_input,df_all_input):
     plt.xlim(1900,2000)
     plt.show()
 
-    df_all = pd.read_csv('df_all_input')
+    df_all = df_all_input
 
     count_awards = len(df) #allwith awards
     count_all = len(df_all) # get all 

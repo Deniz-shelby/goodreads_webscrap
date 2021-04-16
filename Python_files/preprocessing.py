@@ -26,6 +26,7 @@ def preprocessing(csv_path):
 
 
     df.to_csv("df_cleaned.csv", index=False)
+    return df
     
 
     # preprocessing("df_new_1100.csv")

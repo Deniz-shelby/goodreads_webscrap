@@ -48,4 +48,5 @@ def create_df_and_save_as_csv(url_list):
             'places':places
            }
     df = pd.DataFrame(data)
-    df.to_csv("df_new_100o.csv", index=False)
+    df.to_csv("df_terminal_1000.csv", index=False)
+    return df
