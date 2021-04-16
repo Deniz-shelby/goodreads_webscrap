@@ -1,14 +1,18 @@
 import pandas as pd
 
 def preprocessing(df_input):
-    df = df_input
+    df = pd.DataFrame(df_input)
     # drop na if needed add more columns
     df = df.dropna(subset=['awards'])
     df =df.dropna(subset=['original_publish_year'])
     #cleaning the data
     # cleaning data
+    df['num_reviews'] = df['num_reviews'].astype(str)
     df['num_reviews'] = df['num_reviews'].str.replace(",","")
+    df['num_reviews'] = df['num_reviews'].astype(int)
+    df['num_ratings'] = df['num_ratings'].astype(str)
     df['num_ratings'] = df['num_ratings'].str.replace(",","")
+    df['num_ratings'] = df['num_ratings'].astype(int)
     df['num_pages'] = df['num_pages'].astype(int)
     df['original_publish_year'] = df['original_publish_year'].astype(int)
     #awards count
