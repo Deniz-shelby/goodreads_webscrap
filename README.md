@@ -1,4 +1,4 @@
-# goodreads_webscrap
+# Webscraping goodreads
 
 The web app. is live at https://share.streamlit.io/pathi-rao/bw1_streamlit/main/app.py
 ## Project WAV  
